@@ -1,12 +1,11 @@
 import os
-import string
 import sys
 import requests
 from bs4 import BeautifulSoup
 
 INDEX_URL = "https://hackropole.fr/fr/index.json"
 
-def find_challenge(url: string) -> dict:
+def find_challenge(url: str) -> dict:
     data = requests.get(INDEX_URL).json()
     
     for chall in data:
@@ -15,15 +14,15 @@ def find_challenge(url: string) -> dict:
             return chall
     return {}
 
-def get_docker_compose_url(challenge_url: string) -> string:
+def get_docker_compose_url(challenge_url: str) -> str | None:
     try:
         response = requests.get(challenge_url)
         response.raise_for_status()
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        link = soup.find('a', href=lambda x: x and 'docker-compose' in x)
+        link = soup.find('a', href=lambda x: x is not None and 'docker-compose' in x)
         if link and link.get('href'):
-            docker_url = link['href']
+            docker_url = str(link['href'])
             if docker_url.startswith('/'):
                 docker_url = 'https://hackropole.fr' + docker_url
             return docker_url
@@ -32,7 +31,8 @@ def get_docker_compose_url(challenge_url: string) -> string:
     
     return None
 
-def get_challenge_details(challenge_url: string) -> tuple:
+
+def get_challenge_details(challenge_url: str) -> tuple:
     try:
         response = requests.get(challenge_url)
         response.raise_for_status()
@@ -49,7 +49,7 @@ def get_challenge_details(challenge_url: string) -> tuple:
                 author_link = parent_link['href']
         
         difficulty = "Inconnue"
-        stars = soup.find_all('use', href=lambda x: x and 'star-fill' in x)
+        stars = soup.find_all('use', href=lambda x: x is not None and 'star-fill' in x)
         if stars:
             difficulty = len(stars)
         else:
@@ -132,7 +132,7 @@ def main():
                 f.write(f"> Auteur: {author['name']}\n")
             f.write(f"> Difficulté: {difficulty}\n")
             f.write("\n## Description\n\n")
-            f.write(f"{challenge['content']}\n")
+            f.write(f"{challenge['content']}\n\n")
             f.write("## Objectif\n\n")
             f.write("Décrivez ici l'objectif du challenge.\n\n")
             f.write("## Analyse\n\n")
@@ -153,6 +153,5 @@ def main():
         print("images directory already exists, avoiding overwrite.")
         
     print("Preparation complete.")
-    
     
 main()
