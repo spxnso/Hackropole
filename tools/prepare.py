@@ -125,12 +125,12 @@ def main():
     else:
         with open(writeup_path, "w", encoding="utf-8") as f:
             f.write(f"# {challenge['title']}\n\n")
-            f.write(f"> Titre: {challenge['title']}\n")
+            f.write(f"> Titre: {challenge['title']}  \n")
             if author['link']:
-                f.write(f"> Auteur: [{author['name']}]({author['link']})\n")
+                f.write(f"> Auteur: [{author['name']}]({author['link']})  \n")
             else:
-                f.write(f"> Auteur: {author['name']}\n")
-            f.write(f"> Difficulté: {difficulty}\n")
+                f.write(f"> Auteur: {author['name']}  \n")
+            f.write(f"> Difficulté: {difficulty}  \n")
             f.write("\n## Description\n\n")
             f.write(f"{challenge['content']}\n\n")
             f.write("## Objectif\n\n")
