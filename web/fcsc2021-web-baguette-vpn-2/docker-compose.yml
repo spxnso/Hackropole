@@ -1,0 +1,9 @@
+services:
+  baguette-vpn:
+    image: anssi/fcsc2021-web-baguette-vpn-vpn:latest
+    ports:
+      - 8000:1337
+
+  baguette-vpn-cdn:
+    image: anssi/fcsc2021-web-baguette-vpn-cdn:latest
+    hostname: baguette-vpn-cdn

@@ -151,7 +151,7 @@ def main():
         print(f"images directory already exists, recreating due to --overwrite flag.")
     else:
         print("images directory already exists, avoiding overwrite.")
-        
+    
     print("Preparation complete.")
     
 main()
