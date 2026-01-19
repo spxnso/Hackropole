@@ -1,0 +1,13 @@
+services:
+  ceci_nest_pas_une_pipe:
+    image: anssi/fcsc2019-web-ceci-n-est-pas-une-pipe:latest
+    ports:
+      - "8000:80"
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: anssi/fcsc2019-web-ceci-n-est-pas-une-pipe-db:latest
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: phi4noowe3ainal4kae5iutezooYa4du
