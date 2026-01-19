@@ -132,7 +132,7 @@ def main():
                 f.write(f"> Auteur: {author['name']}  \n")
             f.write(f"> Difficulté: {difficulty}  \n")
             f.write("\n## Description\n\n")
-            f.write(f"{challenge['content']}\n\n")
+            f.write(f"{challenge['content']}\n")
             f.write("## Objectif\n\n")
             f.write("Décrivez ici l'objectif du challenge.\n\n")
             f.write("## Analyse\n\n")
