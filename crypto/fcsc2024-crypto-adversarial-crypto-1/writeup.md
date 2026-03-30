@@ -2,7 +2,7 @@
 
 > Titre: AdveRSArial Crypto (Infant)  
 > Auteur: Maxime  
-> Difficulté: intro  
+> Difficulté: intro   
 
 ## Description
 
@@ -72,12 +72,14 @@ On calcule donc $\lambda(n)$.
 $$
 \lambda(n) = \mathrm{lcm}(\lambda(p), \lambda(q))
 $$
+
 La [fonction indicatrice de Carmichael](https://fr.wikipedia.org/wiki/Indicatrice_de_Carmichael) renvoie le plus petit exposant $m$ tel que $a^m \equiv 1 \pmod{n}$  pour tout entier $a$ premier avec $n$ 
 Dans ce cas particulier, comme $q = 1$, on a:
 
 $$
 \lambda(q) = \lambda(1) = 1
 $$
+
 Donc le calcul de $\lambda(n)$ se simplifie à:
 
 $$
@@ -89,22 +91,29 @@ $\mathrm{lcm}(a, b)$ est le plus petit commun multiple, dit $PPCM$ des nombre $a
 $$
 \mathrm{lcm}(\lambda(p),1) = \lambda(p)
 $$
-On obtient donc 
+
+On obtient donc:
+
 $$
 \lambda(n) = \lambda(p) = n - 1
-$$ Ici, comme $n$ est directement premier, on peux calculer la clé privée facilement. Il nous suffit donc de suivre le reste à faire, indiqué par Wikipédia.
+$$ 
+
+Ici, comme $n$ est directement premier, on peux calculer la clé privée facilement. Il nous suffit donc de suivre le reste à faire, indiqué par Wikipédia.
 
 > calculer l'entier naturel _d_, [inverse modulaire](https://fr.wikipedia.org/wiki/Inverse_modulaire "Inverse modulaire") de _e_ pour la multiplication modulo φ(_n_) et strictement inférieur à φ(_n_), appelé _exposant de déchiffrement_ ; _d_ peut se calculer efficacement par l'[algorithme d'Euclide étendu](https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu "Algorithme d'Euclide étendu").
 
 On cherche donc $d$ tel que:
+
 $$
 ed = 1 \pmod{\lambda(n)}
 $$
+
 Donc:
 
 $$
 d = e^{-1} \pmod{n - 1}
-$$ 
+$$
+
 Autrement dit, il suffit de calculer l'inverse modulaire de $e$ modulo $n - 1$
 Une fois $d$ obtenu, on peux simplement déchiffrer en utilisant la formule vue plus tôt $m = c^d \pmod{n}$ puis convertir le résultat en bytes pour obtenir le flag
 

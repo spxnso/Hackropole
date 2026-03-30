@@ -27,6 +27,7 @@ On apprend qu'il peut se modéliser sous la forme algébrique suivante
 $$
 	C_{i} = E_{k}(M_i) = (M_{i} + K_{i})\mod 26
 $$
+
 Avec:
 - $E_{k}(M_{i})$ La fonction représentant l'encryption
 - $M_{i}$ Le texte à encrypter
@@ -42,6 +43,7 @@ Dans Vigenère, chaque lettre est convertie en nombre de 0 à 25 (a=0, b=1, ...,
 ### Déchiffrement
 
 Il suffit d'isoler $M_{i}$ dans notre équation
+
 $$
 \begin{align*}
 	E_{k}(M_{i}) = (M_{i} + K_{i}) \mod 26 \\
@@ -49,6 +51,7 @@ $$
 	M_{i} = E_{k}(M_{i}) - K_{i} \mod 26 \\
 \end{align*}
 $$
+
 NB: Le $\mod 26$ a été déplacé de côté puisque qu'il faut garder un résultat inclus dans l'alphabet.
 
 Bien que l'équation soit résolue, procéder caractère par caractère serait une perte de temps au vu de la longueur du message (210). Il nous suffit donc d'utiliser notre ami [Python](https://python.org)
