@@ -1,8 +1,8 @@
 [project]
 name = "hackropole" # Satisfy Even Better TOML
 version = "0.1.0" # Satisfy Even Better TOML
-dependencies = ["pycryptodome (>=3.23.0,<4.0.0)"]
-requires-python = ">=3.7,<3.12"
+dependencies = ["pycryptodome (>=3.23.0,<4.0.0)", "requests (>=2.33.0,<3.0.0)", "bs4 (>=0.0.2,<0.0.3)"]
+requires-python = ">=3.10,<3.12"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

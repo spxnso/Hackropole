@@ -1,0 +1,30 @@
+services:
+  chatpristi-www:
+    image: anssi/fcsc2022-web-chatpristi-www:latest
+    container_name: chatpristi-www
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_HOST=chatpristi-db
+      - POSTGRES_USER=fcsc2022
+      - POSTGRES_PASSWORD=aechipoo0Aexuo1ang7ocae2mahng6ei
+      - POSTGRES_DB=fcsc2022
+      - WWW_PREFIX=http://chatpristi-www:8000
+    networks:
+      - chatpristi-external
+      - chatpristi-internal
+
+  chatpristi-db:
+    image: anssi/fcsc2022-web-chatpristi-db:latest
+    container_name: chatpristi-db
+    environment:
+      - POSTGRES_USER=fcsc2022
+      - POSTGRES_PASSWORD=aechipoo0Aexuo1ang7ocae2mahng6ei
+      - POSTGRES_DB=fcsc2022
+    networks:
+      - chatpristi-internal
+
+networks:
+  chatpristi-external:
+  chatpristi-internal:
+    internal: true
