@@ -1,3 +1,12 @@
+---
+aliases:
+  - fcsc-web-enisa-flag-store-2
+tags:
+  - go
+  - web
+  - postgresql
+---
+
 # ENISA Flag Store 2/2
 
 > Titre: ENISA Flag Store 2/2  
@@ -270,3 +279,7 @@ Et on obtient donc le flag.
 ## Flag
 
 FCSC{b505ad2ce3f07c4793fa7269c359736dfbd71286c88de11509a96a77616b35a0}
+
+## Payloads
+
+- [postgresql_injection](../../../payloads/web/postgresql_injection.md)

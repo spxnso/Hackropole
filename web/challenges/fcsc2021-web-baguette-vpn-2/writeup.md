@@ -1,3 +1,12 @@
+---
+aliases:
+  - fcsc2023-web-baguette-vpn-2
+tags:
+  - web
+  - python
+---
+
+
 # Baguette VPN 2/2
 
 > Titre: Baguette VPN 2/2

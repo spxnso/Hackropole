@@ -1,3 +1,10 @@
+---
+aliases:
+  - fcsc2023-web-tes-lent
+tags:
+  - web
+---
+
 # fcsc2023-web-tes-lent
 
 > Titre: T'es lent  

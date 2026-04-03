@@ -1,3 +1,10 @@
+---
+aliases:
+  - fcsc2020-web-babel-web
+tags:
+  - web
+---
+
 # fcsc2020-web-babel-web
 
 > Titre: Babel Web  

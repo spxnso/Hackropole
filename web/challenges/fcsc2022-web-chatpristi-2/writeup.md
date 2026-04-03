@@ -1,3 +1,11 @@
+---
+aliases:
+  - fcsc-web-chapristi-2
+tags:
+  - web
+  - postgresql
+---
+
 # Chatpristi 2/2
 
 > Titre: Chatpristi 2/2  
@@ -128,3 +136,7 @@ Le flag apparaît alors dans les résultats.
 ## Flag
 
 FCSC{edfaeb139255929e55a3cffe9f3f37cd4e871e5015c4d4ade2b02d77d44019e5}
+
+## Payloads
+
+- [postgresql_injection](../../../payloads/web/postgresql_injection.md)

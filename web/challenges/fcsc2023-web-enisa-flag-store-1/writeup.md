@@ -1,3 +1,12 @@
+---
+aliases:
+  - fcsc-web-enisa-flag-store-1
+tags:
+  - go
+  - web
+  - postgresql
+---
+
 # ENISA Flag Store 1/2
 
 > Titre: ENISA Flag Store 1/2  
@@ -245,3 +254,7 @@ Et en se connectant, on découvre le flag du CTF `FCSC 2023 REAL FIRST FLAG`.
 ## Flag
 
 FCSC{fad3a47d8ded28565aa2f68f6e2dbc37343881ba67fe39c5999a0102c387c34b}
+
+## Payloads
+
+- [postgresql_injection](../../../payloads/web/postgresql_injection.md)

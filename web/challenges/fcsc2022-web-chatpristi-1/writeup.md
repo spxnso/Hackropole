@@ -1,3 +1,11 @@
+---
+aliases:
+  - fcsc2023-web-chapristi-1
+tags:
+  - python
+  - postgresql
+---
+
 # Chatpristi 1/2
 
 > Titre: Chatpristi 1/2  
@@ -43,3 +51,7 @@ Et on trouve le flag (à recopier à la main)
 ## Flag
 
 FCSC{1D32671928B0DFD5E0B92B57871B1D49}
+
+## Payloads
+
+- [postgresql_injection](../../../payloads/web/postgresql_injection.md)

@@ -1,4 +1,12 @@
-# fcsc2023-web-tes-lent
+---
+aliases:
+  - fcsc2023-web-baguette-vpn-1
+tags:
+  - web
+  - python
+---
+
+# fcsc2023-web-baguette-vpn-1
 
 > Titre: Baguette VPN 1/2  
 > Auteur: DrStache  

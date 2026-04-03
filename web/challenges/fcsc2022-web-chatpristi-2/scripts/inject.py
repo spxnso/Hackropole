@@ -1,4 +1,4 @@
-# Automated SQL injectio
+# Automated SQL injection
 import urllib.parse
 
 import bs4

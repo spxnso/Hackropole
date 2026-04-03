@@ -1,3 +1,11 @@
+---
+aliases:
+  - fcsc2019-web-ceci-n-est-pas-une-pipe
+tags:
+  - web
+  - php
+---
+
 # Ceci n’est pas une pipe
 
 > **Titre** : Ceci n’est pas une pipe  
