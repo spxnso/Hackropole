@@ -1,0 +1,44 @@
+services:
+  enisa-flag-store-www:
+    image: anssi/fcsc2023-web-enisa-flag-store-www:latest
+    read_only: true
+    container_name: enisa-flag-store-www
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_HOST=enisa-flag-store-db
+      - POSTGRES_USER=fcsc2023_user
+      - POSTGRES_PASSWORD=eipo8yai4xoh4vai8xahshiehee4haeY
+      - POSTGRES_DB=fcsc2023
+      - SESSION_KEY=ooh0aeGoshioth6eozoochi8aeZei4to
+      - ENCRYPTION_KEY=iegh2Eey4oodoh9eekaXeghopieKaiCu
+    networks:
+      - enisa-flag-store-external
+      - enisa-flag-store-internal
+
+  enisa-flag-store-db:
+    image: anssi/fcsc2023-web-enisa-flag-store-db:latest
+    container_name: enisa-flag-store-db
+    environment:
+      - POSTGRES_USER=fcsc2023_admin
+      - POSTGRES_PASSWORD=ayieceuqu8their6Aigiecieha6Ia1ah
+      - POSTGRES_DB=fcsc2023
+    networks:
+      - enisa-flag-store-external
+      - enisa-flag-store-internal
+
+  enisa-flag-store-cleaner:
+    image: anssi/fcsc2023-web-enisa-flag-store-cleaner:latest
+    container_name: enisa-flag-store-cleaner
+    environment:
+      - POSTGRES_HOST=enisa-flag-store-db
+      - POSTGRES_USER=fcsc2023_admin
+      - POSTGRES_PASSWORD=ayieceuqu8their6Aigiecieha6Ia1ah
+      - POSTGRES_DB=fcsc2023
+    networks:
+      - enisa-flag-store-internal
+
+networks:
+  enisa-flag-store-external:
+  enisa-flag-store-internal:
+    internal: true
